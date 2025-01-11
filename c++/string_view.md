@@ -74,5 +74,6 @@ int main()
     return 0;
 }
 ```
+* std::string 的拷贝构造和拷贝赋值是申请了一片新的内存并把数据拷贝到这片内存，并不是写时复制。
 * 参考[string_view介绍](https://www.learncpp.com/cpp-tutorial/introduction-to-stdstring_view)
 
