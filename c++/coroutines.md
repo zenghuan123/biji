@@ -146,3 +146,4 @@ int main(int argc,char* argv[]) {
     return 0;
 }
 ```
+*co_yield相当于 co_await promise.yield_value(expr)
