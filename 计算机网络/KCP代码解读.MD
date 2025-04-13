@@ -1,0 +1,28 @@
+
+## 快速重传怎么做的
+IKCPCB结构体上有两个值fastresend和fastlimit
+当收到ack的id比正在等待ack的id大fastresend时，会触发快速重传。
+fastlimit如果不为0就表示得超时一定次数才能触发快速重传
+## 流量控制怎么做的
+发送报文时将发送方剩余的空闲缓冲区发送给接收方，接收方计算确认自己可以发送多少报文过去。
+rcv_wnd是接收列表最大长度
+snd_wnd是发送列表的最大长度
+rmt_wnd是对方接收列表的剩余空间
+ikcp_wnd_unused计算出还剩下的长度，通过报文的wnd传送给对方
+当rmt_wnd为0时，会发送空报文，对方会回复ack并附带wnd过来更新
+当接收缓冲区的大小从慢变为不满时，会再下次发送数据时附带一个通知对方更新rmt_wnd的报文
+## 拥塞控制怎么做的
+cwnd 是拥塞窗口
+ssthresh是慢启动阈值
+当cwnd小于ssthresh时，cwnd在每次发送数据成功时+1 这也是慢启动阶段
+当cwnd大于ssthresh时，就会进入拥塞避免状态
+拥塞避免状态下cwnd每次增加 mss/x + 1/16
+当发送出现超时重传时
+ssthresh会变成当前cwnd的一半
+并且cwnd变为1重新进入慢启动阶段
+触发快速重传时会进入快速恢复阶段，ssthreh会变成跨越的确认id的数量除以2.并且cwnd会变成ssthresh+fastresend
+
+
+
+
+
