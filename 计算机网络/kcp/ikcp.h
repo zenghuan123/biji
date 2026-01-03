@@ -266,20 +266,20 @@ typedef struct IQUEUEHEAD iqueue_head;
 //=====================================================================
 struct IKCPSEG
 {
-	struct IQUEUEHEAD node;//Ë«ÏòÁĞ±í½Úµã
-	IUINT32 conv;//»á»°id
-	IUINT32 cmd;//ÀàĞÍ±íÊ¾Õâ¸ö±¨ÎÄ¶ÎÊÇÊ²Ã´¹¦ÄÜ
-	IUINT32 frg;//²ğ·ÖµÄ±¨ÎÄ¶ÎÖĞ£¬ÕâÊÇµÚ¼¸¸ö·Ö×é
-	IUINT32 wnd;// ·¢ËÍ·½µÄ½ÓÊÕ»º³åÁĞ±íµÄÊ£Óà´óĞ¡
-	IUINT32 ts; //·¢ËÍÊ±¼ä
-	IUINT32 sn; //Õâ¸ö±¨ÎÄ¶ÎµÄid£¬ÔÚACK·Ö×éÖĞ±íÊ¾µÄÊÇÈ·ÈÏÊÕµ½µÄ±¨ÎÄid
-	IUINT32 una; //µ±Ç°¶ËÏ£ÍûÁíÍâÒ»¶Ë·¢ËÍµÄid
-	IUINT32 len;	//Ó¦ÓÃ²ãÊı¾İ³¤¶È
-	IUINT32 resendts;//³¬Ê±Ê±¼ä£¬µ±Ç°Ê±¼ä³¬¹ıÕâ¸öÊ±¼äÁË£¬ËµÁËÒªÖØĞÂ·¢ËÍÕâ¸ö±¨ÎÄ¶Î
-	IUINT32 rto;//³¬Ê±ºóÖØ´«Òª¼ä¸ôµÄÊ±¼ä,Ëæ×ÅÖØ´«µÄ´ÎÊıÓÉ no_delayÎª0ÊÇÃ¿´Î³ËÒÔ2£¬Îª1ÊÇÃ¿´Î*1.5£¬Îª2ÊÇÃ¿´Î+rx_rto
-	IUINT32 fastack; //fastack±íÊ¾ÔÚÊÕµ½ackºó£¬ÈÏÎªÕâĞ©ackÖ®Ç°»¹ÓĞ¶àÉÙÊı¾İÃ»ÓĞÊÕµ½
-	IUINT32 xmit; // µ±Ç°±¨ÎÄ¶ÎµÄ·¢ËÍ´ÎÊı
-	char data[1]; //Ó¦ÓÃ²ãÊı¾İ
+	struct IQUEUEHEAD node;//åŒå‘åˆ—è¡¨èŠ‚ç‚¹
+	IUINT32 conv;//ä¼šè¯id
+	IUINT32 cmd;//ç±»å‹è¡¨ç¤ºè¿™ä¸ªæŠ¥æ–‡æ®µæ˜¯ä»€ä¹ˆåŠŸèƒ½
+	IUINT32 frg;//æ‹†åˆ†çš„æŠ¥æ–‡æ®µä¸­ï¼Œè¿™æ˜¯ç¬¬å‡ ä¸ªåˆ†ç»„
+	IUINT32 wnd;// å‘é€æ–¹çš„æ¥æ”¶ç¼“å†²åˆ—è¡¨çš„å‰©ä½™å¤§å°
+	IUINT32 ts; //å‘é€æ—¶é—´
+	IUINT32 sn; //è¿™ä¸ªæŠ¥æ–‡æ®µçš„idï¼Œåœ¨ACKåˆ†ç»„ä¸­è¡¨ç¤ºçš„æ˜¯ç¡®è®¤æ”¶åˆ°çš„æŠ¥æ–‡id
+	IUINT32 una; //å½“å‰ç«¯å¸Œæœ›å¦å¤–ä¸€ç«¯å‘é€çš„id
+	IUINT32 len;	//åº”ç”¨å±‚æ•°æ®é•¿åº¦
+	IUINT32 resendts;//è¶…æ—¶æ—¶é—´ï¼Œå½“å‰æ—¶é—´è¶…è¿‡è¿™ä¸ªæ—¶é—´äº†ï¼Œè¯´äº†è¦é‡æ–°å‘é€è¿™ä¸ªæŠ¥æ–‡æ®µ
+	IUINT32 rto;//è¶…æ—¶åé‡ä¼ è¦é—´éš”çš„æ—¶é—´,éšç€é‡ä¼ çš„æ¬¡æ•°ç”± no_delayä¸º0æ˜¯æ¯æ¬¡ä¹˜ä»¥2ï¼Œä¸º1æ˜¯æ¯æ¬¡*1.5ï¼Œä¸º2æ˜¯æ¯æ¬¡+rx_rto
+	IUINT32 fastack; //fastackè¡¨ç¤ºåœ¨æ”¶åˆ°ackåï¼Œè®¤ä¸ºè¿™äº›ackä¹‹å‰è¿˜æœ‰å¤šå°‘æ•°æ®æ²¡æœ‰æ”¶åˆ°
+	IUINT32 xmit; // å½“å‰æŠ¥æ–‡æ®µçš„å‘é€æ¬¡æ•°
+	char data[1]; //åº”ç”¨å±‚æ•°æ®
 };
 
 
@@ -288,29 +288,29 @@ struct IKCPSEG
 //---------------------------------------------------------------------
 struct IKCPCB
 {
-	IUINT32 conv, mtu, mss, state; //conv ÊÇ»á»°±êÊ¶£¬¿Í»§¶ËºÍ·şÎñ¶ËÒªÊÇÍ¬Ò»¸ö mtuÊÇ×î´óÁ´Â·²ãÖ¡³¤¶È,mssÊÇ±¨ÎÄ¶ÎÀïÃæÓ¦ÓÃ²ãÊı¾İµÄ³¤¶È
-	IUINT32 snd_una, snd_nxt, rcv_nxt;//snd_unaÊÇÒÑ¾­·¢ËÍµ«ÊÇ»¹Ã»ÓĞÊÕµ½È·ÈÏµÄ×îĞ¡id snd_nxtÊÇÎÒÕâÒ»¶ËÒª·¢ËÍ¸øÁíÍâÒ»¶ËµÄÃ¿¸ö±¨ÎÄ¶Î×ÔÔöµÄid rcv_nxtÊÇÏ£Íû½ÓÊÕµ½µÄ¶Ô·½id
-	IUINT32 ts_recent, ts_lastack, ssthresh;// ssthreshÊÇÂıÆô¶¯ãĞÖµ,·¢ËÍ¿ìËÙÖØ´«Ê±Ôö¼Ó£¬
-	IINT32 rx_rttval, rx_srtt, rx_rto, rx_minrto;//rx_rto ÊÇ³¬Ê±ÖØ´«µÄÊ±¼ä
-	IUINT32 snd_wnd, rcv_wnd, rmt_wnd, cwnd, probe;// snd_wndÊÇ·¢ËÍÁĞ±íµÄ×î´ó³¤¶È rcv_wnd ÊÇ½ÓÊÕÁĞ±í×î´ó³¤¶È rmt_wnd ÊÇ¶Ô·½µÄ½ÓÊÕÁĞ±í¿ÕÏĞ³¤¶È cwndÊÇÓµÈû¿ØÖÆ´°¿Ú
-	IUINT32 current, interval, ts_flush, xmit;// current ÊÇµ±Ç°¸üĞÂµÄÊ±¼ä´ê£¬interval ÊÇ¸üĞÂµÄ¼ä¸ô xmit ÊÇ·¢ËÍµÄ´ÎÊı
-	IUINT32 nrcv_buf, nsnd_buf;// nsnd_bufÊÇsnd_bufÖĞµÄÁĞ±í³¤¶È  nrcv_buf ÊÇrcv_bufµÄÁĞ±í³¤¶È
-	IUINT32 nrcv_que, nsnd_que;// nsnd_que ÊÇ·¢ËÍÁĞ±í³¤¶È nrcv_queÊÇrcv_queueµÄÁĞ±í³¤¶È
+	IUINT32 conv, mtu, mss, state; //conv æ˜¯ä¼šè¯æ ‡è¯†ï¼Œå®¢æˆ·ç«¯å’ŒæœåŠ¡ç«¯è¦æ˜¯åŒä¸€ä¸ª mtuæ˜¯æœ€å¤§é“¾è·¯å±‚å¸§é•¿åº¦,mssæ˜¯æŠ¥æ–‡æ®µé‡Œé¢åº”ç”¨å±‚æ•°æ®çš„é•¿åº¦
+	IUINT32 snd_una, snd_nxt, rcv_nxt;//snd_unaæ˜¯å·²ç»å‘é€ä½†æ˜¯è¿˜æ²¡æœ‰æ”¶åˆ°ç¡®è®¤çš„æœ€å°id snd_nxtæ˜¯æˆ‘è¿™ä¸€ç«¯è¦å‘é€ç»™å¦å¤–ä¸€ç«¯çš„æ¯ä¸ªæŠ¥æ–‡æ®µè‡ªå¢çš„id rcv_nxtæ˜¯å¸Œæœ›æ¥æ”¶åˆ°çš„å¯¹æ–¹id
+	IUINT32 ts_recent, ts_lastack, ssthresh;// ssthreshæ˜¯æ…¢å¯åŠ¨é˜ˆå€¼,å‘é€å¿«é€Ÿé‡ä¼ æ—¶å¢åŠ ï¼Œ
+	IINT32 rx_rttval, rx_srtt, rx_rto, rx_minrto;//rx_rto æ˜¯è¶…æ—¶é‡ä¼ çš„æ—¶é—´
+	IUINT32 snd_wnd, rcv_wnd, rmt_wnd, cwnd, probe;// snd_wndæ˜¯å‘é€åˆ—è¡¨çš„æœ€å¤§é•¿åº¦ rcv_wnd æ˜¯æ¥æ”¶åˆ—è¡¨æœ€å¤§é•¿åº¦ rmt_wnd æ˜¯å¯¹æ–¹çš„æ¥æ”¶åˆ—è¡¨ç©ºé—²é•¿åº¦ cwndæ˜¯æ‹¥å¡æ§åˆ¶çª—å£
+	IUINT32 current, interval, ts_flush, xmit;// current æ˜¯å½“å‰æ›´æ–°çš„æ—¶é—´æ“ï¼Œinterval æ˜¯æ›´æ–°çš„é—´éš” xmit æ˜¯å‘é€çš„æ¬¡æ•°
+	IUINT32 nrcv_buf, nsnd_buf;// nsnd_bufæ˜¯snd_bufä¸­çš„åˆ—è¡¨é•¿åº¦  nrcv_buf æ˜¯rcv_bufçš„åˆ—è¡¨é•¿åº¦
+	IUINT32 nrcv_que, nsnd_que;// nsnd_que æ˜¯å‘é€åˆ—è¡¨é•¿åº¦ nrcv_queæ˜¯rcv_queueçš„åˆ—è¡¨é•¿åº¦
 	IUINT32 nodelay, updated;
 	IUINT32 ts_probe, probe_wait;
-	IUINT32 dead_link, incr;    //dead_link ÊÇ×î´óÖØÊÔ´ÎÊı£¬³¬¹ıÕâ¸ö´ÎÊıstate¾Í»á±äÎª-1
-	struct IQUEUEHEAD snd_queue;//snd_queue »¹Ã»·¢ËÍµÄÊı¾İ»º³åÇøË«ÏòÁĞ±í ikcp_send Ê±¼ÓÈëÕâ¸öÁĞ±í
-	struct IQUEUEHEAD rcv_queue;//ÒÑ¾­½ÓÊÕµ½µÄÊı¾İ£¬´ÓÍ·µ½Î²²¿idµİÔö ÔÚikcp_parse_dataÖĞ¼ÓÈërcv_buffºó,idÊÇµÈ´ıµÄid¾Í¼ÓÈëÕâ¸öÁĞ±í£¬±£´æµÄÊÇµÈ´ıÍâ²¿´¦ÀíµÄÊı¾İ£¬ÔÚikcp_recv´«µİ¸øÍâ²¿
-	struct IQUEUEHEAD snd_buf;	//snd_buf ÊÇ¸Õ·¢ËÍÕıÔÚ·¢ËÍµÄË«ÏòÁĞ±í ·¢ËÍÁË£¬µÈ´ı³¬Ê±ºÍackµÄÁĞ±í
-	struct IQUEUEHEAD rcv_buf;	//¸Õ¸Õ½ÓÊÕµ½µÄÁĞ±í ½ÓÊÕ´°¿Ú£¬´ÓÍ·µ½Î²²¿ idµİ¼õ£¬ikcp_parse_data Ê±ÏÈ¼ÓÈërcv_buff¡£´¦Àí±£ĞòÂß¼­£¬±ÈÈç1£¬2£¬3£¬4±¨ÎÄÊÕµ½ÁË2£¬3£¬4ÄÇÃ´2£¬3£¬4»á±£´æÔÚÕâÀï£¬µ±ÊÕµ½Ê±£¬1£¬2£¬3£¬4¾Í»á·¢Å¶ÊÇÄÇ¸öµ½rcv_queueÖĞ
+	IUINT32 dead_link, incr;    //dead_link æ˜¯æœ€å¤§é‡è¯•æ¬¡æ•°ï¼Œè¶…è¿‡è¿™ä¸ªæ¬¡æ•°stateå°±ä¼šå˜ä¸º-1
+	struct IQUEUEHEAD snd_queue;//snd_queue è¿˜æ²¡å‘é€çš„æ•°æ®ç¼“å†²åŒºåŒå‘åˆ—è¡¨ ikcp_send æ—¶åŠ å…¥è¿™ä¸ªåˆ—è¡¨ï¼Œè¿™ä¸ªåˆ—è¡¨æœ¬èº«æ²¡æœ‰æ•°é‡é™åˆ¶ï¼Œè¦åšé™åˆ¶éœ€è¦ä¸Šå±‚åš
+	struct IQUEUEHEAD rcv_queue;//å·²ç»æ¥æ”¶åˆ°çš„æ•°æ®ï¼Œä»å¤´åˆ°å°¾éƒ¨idé€’å¢ åœ¨ikcp_parse_dataä¸­åŠ å…¥rcv_buffå,idæ˜¯ç­‰å¾…çš„idå°±åŠ å…¥è¿™ä¸ªåˆ—è¡¨ï¼Œä¿å­˜çš„æ˜¯ç­‰å¾…å¤–éƒ¨å¤„ç†çš„æ•°æ®ï¼Œåœ¨ikcp_recvä¼ é€’ç»™å¤–éƒ¨
+	struct IQUEUEHEAD snd_buf;	//snd_buf æ˜¯åˆšå‘é€æ­£åœ¨å‘é€çš„åŒå‘åˆ—è¡¨ å‘é€äº†ï¼Œç­‰å¾…è¶…æ—¶å’Œackçš„åˆ—è¡¨
+	struct IQUEUEHEAD rcv_buf;	//åˆšåˆšæ¥æ”¶åˆ°çš„åˆ—è¡¨ æ¥æ”¶çª—å£ï¼Œä»å¤´åˆ°å°¾éƒ¨ idé€’å‡ï¼Œikcp_parse_data æ—¶å…ˆåŠ å…¥rcv_buffã€‚å¤„ç†ä¿åºé€»è¾‘ï¼Œæ¯”å¦‚1ï¼Œ2ï¼Œ3ï¼Œ4æŠ¥æ–‡æ”¶åˆ°äº†2ï¼Œ3ï¼Œ4é‚£ä¹ˆ2ï¼Œ3ï¼Œ4ä¼šä¿å­˜åœ¨è¿™é‡Œï¼Œå½“æ”¶åˆ°æ—¶ï¼Œ1ï¼Œ2ï¼Œ3ï¼Œ4å°±ä¼šå‘å“¦æ˜¯é‚£ä¸ªåˆ°rcv_queueä¸­
 	IUINT32 *acklist;
-	IUINT32 ackcount;			//ÊÕµ½Êı¾İºó±íÊ¾ÓĞ¶àÉÙ¸öÒª·¢ack°ü
+	IUINT32 ackcount;			//æ”¶åˆ°æ•°æ®åè¡¨ç¤ºæœ‰å¤šå°‘ä¸ªè¦å‘ackåŒ…
 	IUINT32 ackblock;
 	void *user;
 	char *buffer;
-	int fastresend;			// µ±ÊÕµ½µÄÈ·ÈÏack id±ÈÕıÔÚµÈ´ıÈ·ÈÏµÄack idÒª´ó¶àÉÙÊ±Òª¿ìËÙÖØ´«
-	int fastlimit;			//±íÊ¾ÖØÊÔ¶àÉÙ´ÎÖ®ºó²ÅÒª¿ìËÙÖØ´«£¬0±íÊ¾Á¢ÂíÒª
-	int nocwnd, stream;
+	int fastresend;			// å½“æ”¶åˆ°çš„ç¡®è®¤ack idæ¯”æ­£åœ¨ç­‰å¾…ç¡®è®¤çš„ack idè¦å¤§å¤šå°‘æ—¶è¦å¿«é€Ÿé‡ä¼ 
+	int fastlimit;			//è¡¨ç¤ºé‡è¯•å¤šå°‘æ¬¡ä¹‹åæ‰è¦å¿«é€Ÿé‡ä¼ ï¼Œ0è¡¨ç¤ºç«‹é©¬è¦
+	int nocwnd, stream;		//streamè¡¨ç¤º å½“å¤šæ¬¡è°ƒç”¨ikcp_sendæ—¶ï¼Œå°è¯•å°†è¿™æ¬¡è¦å‘é€çš„æ•°æ®åˆå¹¶åˆ°ä¸Šæ¬¡çš„æŠ¥æ–‡æ®µå½“ä¸­
 	int logmask;
 	int (*output)(const char *buf, int len, struct IKCPCB *kcp, void *user);
 	void (*writelog)(const char *log, struct IKCPCB *kcp, void *user);
